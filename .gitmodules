@@ -1,0 +1,3 @@
+[submodule "tivac-ionode"]
+	path = tivac-ionode
+	url = https://github.com/wesleysliao/tivac-ionode.git
