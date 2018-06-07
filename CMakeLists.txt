@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(tivac_serial)
+project(ros_tivac)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
@@ -16,7 +16,7 @@ find_package(catkin REQUIRED COMPONENTS
 
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES tivac_serial
+#  LIBRARIES ros_tivac
 #  CATKIN_DEPENDS rosserial_client rosserial_tivac std_msgs
 #  DEPENDS system_lib
 )
@@ -49,11 +49,11 @@ rosserial_add_client_target(chatter dump)
 
 
 rosserial_configure_client(
-  DIRECTORY ionode
+  DIRECTORY tivac-ionode
   TOOLCHAIN_FILE ${ROSSERIAL_TIVAC_TOOLCHAIN}
 )
-rosserial_add_client_target(ionode ionode.axf ALL)
-rosserial_add_client_target(ionode flash)
-rosserial_add_client_target(ionode size)
-rosserial_add_client_target(ionode dump)
+rosserial_add_client_target(tivac-ionode tivac-ionode.axf ALL)
+rosserial_add_client_target(tivac-ionode flash)
+rosserial_add_client_target(tivac-ionode size)
+rosserial_add_client_target(tivac-ionode dump)
 
